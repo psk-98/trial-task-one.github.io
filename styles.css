@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Libre+Caslon+Display&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", "Libre Caslon Display", sans-serif, serif;
+  text-decoration: none;
+}
+:root {
+  --lighter-color: #fff;
+  --under-layer: -1;
+  --over-layer: 3;
+}
+.container {
+  max-width: 100vw;
+  margin: 0 32px;
+}
+
+nav {
+  margin: 24px 0 0 0;
+  color: var(--lighter-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.navList {
+  display: none;
+}
+.navItem {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 35px 0 0;
+  cursor: pointer;
+}
+.navItem:last-child {
+  margin: 0;
+  border-radius: 10px;
+  border: 2px solid var(--lighter-color);
+  height: 42px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burger {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.burger .line {
+  background: var(--lighter-color);
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.landing {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing * {
+  color: var(--lighter-color);
+}
+
+.background {
+  position: absolute;
+  max-width: 100vw;
+  max-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: var(--under-layer);
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  z-index: var(--under-layer);
+}
+
+.landing .rectangle {
+  height: 15px;
+  width: 90px;
+  background: var(--lighter-color);
+}
+.landing .header {
+  font-size: 50px;
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  margin: 32px 0;
+}
+.landing .desc {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 32px 0;
+}
+.landing .ctaBtn {
+  border: 1px solid var(--lighter-color);
+  border-radius: 10px;
+  width: fit-content;
+  font-size: 18px;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.content .header {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 74px 0;
+}
+
+.postCard {
+  margin: 0 0 32px 0;
+}
+.postImg img {
+  border-radius: 6px;
+}
+.postImg,
+.postImg img {
+  width: 100%;
+}
+.postDetails {
+  margin: -10px 0 0 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 42px 32px 32px 32px;
+}
+.postDate {
+  color: #b7b7b7;
+  font-size: 13px;
+  font-weight: 500;
+}
+.postHeadline {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 24px 0;
+}
+.readMore {
+  display: flex;
+  justify-content: flex-end;
+}
+.readMore span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #d9852c;
+  cursor: pointer;
+}
+
+footer {
+  background: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+}
+.gitRepo svg {
+  height: 40px;
+  stroke: #d9852c;
+}
+.designedBy {
+  margin: 16px 0;
+}
+
+footer a {
+  color: #d9852c;
+}
+footer a:hover {
+  text-decoration: line-through;
+  transform: scale(1.4);
+}
+
+@media (min-width: 744px) {
+  .container {
+    margin: 0 72px;
+  }
+  nav {
+    margin: 32px 0 0 0;
+  }
+  .landing .header {
+    font-size: 70px;
+  }
+  .content .header {
+    font-size: 30px;
+    margin: 89px 0 56px 0;
+  }
+  .postsWrapper {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .postCard:nth-child(even) {
+    margin: 0 20px;
+  }
+  .postCard {
+    width: 33%;
+    max-width: 33%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navList {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+}
