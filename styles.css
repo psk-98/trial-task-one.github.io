@@ -11,6 +11,16 @@
   --under-layer: -1;
   --over-layer: 3;
 }
+
+@keyframes btnAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
 .container {
   max-width: 100vw;
   margin: 0 32px;
@@ -36,6 +46,7 @@ nav {
   font-weight: 500;
   margin: 0 35px 0 0;
   cursor: pointer;
+  transition: all 0.5s;
 }
 .navItem:last-child {
   margin: 0;
@@ -46,6 +57,15 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.navItem:hover {
+  scale: 1.05;
+  text-decoration: line-through;
+}
+.navItem:last-child:hover,
+.landing .ctaBtn:hover {
+  background: var(--lighter-color);
+  color: #d9852c;
 }
 .burger {
   width: 35px;
@@ -80,6 +100,7 @@ nav {
   height: 100vh;
   width: 100%;
   top: 0;
+  background: #d9852c;
   left: 0;
   z-index: var(--under-layer);
 }
@@ -88,12 +109,25 @@ nav {
   width: 100%;
   height: 100%;
   z-index: var(--under-layer);
+  mix-blend-mode: luminosity;
 }
-
+@keyframes recAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateX(50px);
+    background: #d9852c;
+  }
+  0% {
+    transform: none;
+  }
+}
 .landing .rectangle {
   height: 15px;
   width: 90px;
   background: var(--lighter-color);
+  animation: recAnimation 3s linear infinite;
 }
 .landing .header {
   font-size: 50px;
@@ -113,6 +147,7 @@ nav {
   font-size: 18px;
   padding: 7px 15px;
   cursor: pointer;
+  transition: background 0.5s, color 0.5s;
 }
 
 .content .header {
@@ -157,6 +192,10 @@ nav {
   color: #d9852c;
   cursor: pointer;
 }
+.readMore span:hover {
+  transform: scale(1.05);
+  text-decoration: line-through;
+}
 
 footer {
   background: #ddd;
@@ -165,9 +204,36 @@ footer {
   align-items: center;
   padding: 32px 0;
 }
+@keyframes svgAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pathAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .gitRepo svg {
   height: 40px;
   stroke: #d9852c;
+  animation: svgAnimation 2000ms infinite linear;
+}
+.gitRepo path {
+  animation: pathAnimation 2000ms infinite linear;
 }
 .designedBy {
   margin: 16px 0;
